@@ -1,0 +1,42 @@
+
+  <div class="col-xs-6">
+    <h1>{{appTitle | async}}</h1>
+
+    <input type="text" class="form-control" [(ngModel)]="carName">
+
+    <hr>
+
+    <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
+    <button class="btn btn-success" (click)="addCar()">Добавить машину</button>
+
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars">
+      <span class="badge" [ngStyle]="{background: car. color}">
+        {{car.id}}
+      </span>
+        {{car.name}}
+
+        <button
+          class="btn btn-xs.btn-info"
+          (click)="setNewColor(car)">
+          Изменить цвет
+        </button>
+
+        <button
+          class="btn btn-xs.btn-danger"
+          (click)="deleteCar(car)">
+          Удалить машину
+        </button>
+
+
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+  <h5>Авторизация</h5>
+
+  <button class="btn btn-success" (click)="changeAuthStatus('login')">Войти</button>
+  <button class="btn btn-danger" (click)="changeAuthStatus('logout')">Выйти</button>
+

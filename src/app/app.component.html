@@ -1,0 +1,23 @@
+<div class="container">
+  <nav class="navbar navbar-default">
+
+      <ul id="menu">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a routerLink="/">Главная</a>
+        </li>
+        <li routerLinkActive="active">
+          <a *ngIf=auth.isLoggedIn routerLink="/chart">График</a>
+        </li>
+        <li routerLinkActive="active">
+          <a *ngIf=auth.isLoggedIn routerLink="/animations">Анимации</a>
+        </li>
+      </ul>
+
+  </nav>
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

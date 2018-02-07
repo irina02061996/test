@@ -1,0 +1,70 @@
+<div class="row">
+
+
+  <div class="col-md-8">
+    <div [hidden]="!chart">
+      <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+
+    <h5>Интервал</h5>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p>Начало</p>
+        <input type="text" class="form-control" [(ngModel)]="start">
+      </div>
+      <div class="col-md-6">
+        <p>Конец</p>
+        <input type="text" class="form-control" [(ngModel)]="end">
+      </div>
+    </div>
+
+    <hr>
+    <p>Число делений</p>
+    <input type="text" class="form-control" [(ngModel)]="countStep">
+
+    <hr>
+    <button class="btn btn-success" (click)="initChart()">Инициализовать</button>
+
+    <hr>
+    <h5>Параметры функции</h5>
+
+    <h6>Носитель</h6>
+    <div class="row">
+      <div class="col-md-6">
+        <p>a</p>
+        <input type="text" class="form-control" [(ngModel)]="a" #inpA (input)="updateData(inpA.value, 'a')">
+      </div>
+
+      <div class="col-md-6">
+        <p>d</p>
+        <input type="text" class="form-control" [(ngModel)]="d" #inpD (input)="updateData(inpD.value, 'd')">
+      </div>
+    </div>
+
+    <hr>
+    <h6>Ядро</h6>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p>b</p>
+        <input type="text" class="form-control" [(ngModel)]="b" #inpB (input)="updateData(inpB.value, 'b')">
+      </div>
+
+
+      <div class="col-md-6">
+        <p>c</p>
+        <input type="text" class="form-control" [(ngModel)]="c" #inpC (input)="updateData(inpC.value, 'c')">
+      </div>
+    </div>
+    <hr>
+    <button class="btn btn-success" (click)="addData()">Добавить график</button>
+    <button class="btn btn-success" (click)="resetChart()">Удалить графики</button>
+  </div>
+
+</div>
+

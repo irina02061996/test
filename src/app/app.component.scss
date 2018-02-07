@@ -1,0 +1,35 @@
+
+.white-text {
+  color: #fff;
+}
+
+.col-xs-8 {
+  margin-top: 32px;
+}
+
+#menu, #menu li {
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  text-align: center; /* пункты и текст горизонтально по центру */
+  background: #03658e;
+}
+
+#menu li{
+  display:inline-block;
+  text-align: center;
+}
+
+#menu a {
+  display: block;
+  padding: 5px 15px;
+  color: #fff;
+  font-size:150%;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  background: #8AB8CC;
+}
